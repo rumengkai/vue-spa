@@ -4,6 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import '@/styles/index.scss'
+
 // import { Toast, Alert } from 'vux'
 
 // Vue.component('toast', Toast)
