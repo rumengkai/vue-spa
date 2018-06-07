@@ -1,15 +1,25 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+
+const _import = require('./_import_' + process.env.NODE_ENV)
 
 Vue.use(Router)
 
+export const constantRouterMap = [
+		{
+				path: '/',
+				name: 'HelloWorld',
+				component: _import('helloworld/index')
+		}, {
+				path: '/tpl',
+				name: 'tpl',
+				component: _import('tpl/index')
+		}
+]
+
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
-  ]
+		// mode: 'history', //后端支持可开
+		base: '',
+		scrollBehavior: () => ({ y: 0 }),
+		routes: constantRouterMap
 })
