@@ -2,6 +2,8 @@
 
 > 功夫钱庄
 
+vue + vux + axios
+
 ## Build Setup
 
 ``` bash

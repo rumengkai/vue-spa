@@ -46,7 +46,7 @@ var originalConfig = {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: vueLoaderConfig
-      },
+			},
       {
         test: /\.js$/,
         loader: 'babel-loader',
@@ -94,7 +94,9 @@ var originalConfig = {
 
 const webpackConfig = originalConfig // 原来的 module.exports 代码赋值给变量 webpackConfig
 
-module.exports = webpackConfig
-// vuxLoader.merge(webpackConfig, {
-//   plugins: ['vux-ui']
-// })
+// module.exports = webpackConfig
+module.exports  = vuxLoader.merge(webpackConfig, {
+  plugins: [{
+		name: 'vux-ui'
+	}]
+})

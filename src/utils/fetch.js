@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import axios from 'axios'
 import { getToken, getGid, getFrom } from '@/utils/auth'
 import Qs from 'qs'
@@ -15,9 +16,13 @@ const service = axios.create({
 })
 // request拦截器
 service.interceptors.request.use(config => {
+		// 请求header中携带信息
 		config.headers['token'] = getToken()
 		config.headers['gid'] = getGid()
 		config.headers['from'] = getFrom()
+		Vue.$vux.loading.show({
+			text: 'Loading'
+		})
 		return config
 }, error => {
 		// Do something with request error
@@ -27,20 +32,23 @@ service.interceptors.request.use(config => {
 // respone拦截器
 service.interceptors.response.use(response => {
 		const res = response.data
+		Vue.$vux.loading.hide()
 		if (res.status === 0) {
 				// 成功
 				return res
 		} else if (res.status === 4) {
+				Vue.$vux.toast.text(res.error)
 				return res
 				// toast(res.error) return Promise.reject({'error':res})
 		} else {
+				Vue.$vux.toast.text(res.error)
 				// toast(res.error) if (res.status==5&&res.error=='会话失效，请重新登录') {
 				// 	window.clearcookie(cookie) 	// getAuth(cookie, querystring) }
 				return res
 		}
 }, error => {
 		console.log('err' + error) // for debug
-		// toast(error.message)
+		Vue.$vux.toast.text(error.message)
 		return Promise.reject(error)
 })
 const feachData = r => {

@@ -4,12 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import './vux'
+import '@/utils/index'
 import '@/styles/index.scss'
-
-// import { Toast, Alert } from 'vux'
-
-// Vue.component('toast', Toast)
-// Vue.component('alert', Alert)
 
 import * as filters from './filters' // global filter
 
@@ -17,6 +14,10 @@ import * as filters from './filters' // global filter
 Object.keys(filters).forEach(key => {
 	Vue.filter(key, filters[key])
 })
+
+// 授权，存gid和token
+import { getBaseInfo } from './utils/auth'
+getBaseInfo(location.pathname + '%3Ftype=n' + location.hash)
 
 Vue.config.productionTip = false
 
