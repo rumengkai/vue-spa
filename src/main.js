@@ -15,10 +15,6 @@ Object.keys(filters).forEach(key => {
 	Vue.filter(key, filters[key])
 })
 
-// 授权，存gid和token
-import { getBaseInfo } from './utils/auth'
-getBaseInfo(location.pathname + '%3Ftype=n' + location.hash)
-
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
