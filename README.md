@@ -57,9 +57,9 @@ npm test
     ├── index.html                      入口页面
     ├── package.json                    npm包配置文件，里面定义了项目的npm脚本，依赖包等信息
     ├── build                           构建脚本目录
-    │   ├── build.js                 				运行本地构建服务器，可以访问构建后的页面
+    │   ├── build.js                        运行本地构建服务器，可以访问构建后的页面
     │   ├── check-version.js                版本检测
-    │   ├── utils.js                   			构建相关工具方法
+    │   ├── utils.js                        构建相关工具方法
     │   ├── vue-loader.js                   vue-loader
     │   ├── webpack.base.conf.js            wabpack基础配置
     │   ├── webpack.dev.conf.js             wabpack开发环境配置
@@ -72,32 +72,32 @@ npm test
     ├── mock                            mock数据目录
     │   └── hello.js
     ├── src                             源码目录    
-		│   ├── api                          		请求接口抽离
-    │   │		└── index.js                  
-		│   ├── assets                          资源目录，这里的资源会被wabpack构建
+    │   ├── api                             请求接口抽离
+    │   │    └── index.js                  
+    │   ├── assets                          资源目录，这里的资源会被wabpack构建
     │   │   └── images
     │   │       └── logo.png
     │   ├── components                      公共组件目录
     │   │   └── HelloWorld.vue
-		│   ├── filters                        	全局过滤器
+    │   ├── filters                        	全局过滤器
     │   │		└── index.js   
     │   ├── routes                          前端路由
     │   │   └── index.js
-		│   ├── style                           样式
+    │   ├── style                           样式
     │   │   ├── index.scss									
-    │   │   └── theme.scss									主题
+    │   │   └── theme.scss                  主题
     │   ├── store                           应用级数据（state）
     │   │   └── index.js
-		│   ├── utils                           常用工具
-    │   │    ├── assembly.js								工具
-    │   │    ├── auth.js										授权相关操作
-    │   │    ├── fetch.js										异步请求封装（axios）
-    │   │    ├── index.js										公共js
-    │   │    └── validate.js								验证js
+    │   ├── utils                           常用工具
+    │   │    ├── assembly.js                    工具
+    │   │    ├── auth.js                        授权相关操作
+    │   │    ├── fetch.js                       异步请求封装（axios）
+    │   │    ├── index.js                       公共js
+    │   │    └── validate.js                    验证js
     │   ├── views                           页面目录
-    │   │    └── helloworld.vue
-    │   │   		└── index.vue
-		│   ├── main.js                         入口js文件
+    │   │    └── helloworld
+    │   │        └── index.vue
+    │   ├── main.js                         入口js文件
     │   ├── App.vue                         根组件
     │   └── vux.js                          vux全局注册组件
     ├── static                          纯静态资源，不会被wabpack构建。
