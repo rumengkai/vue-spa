@@ -109,7 +109,10 @@ const webpackConfig = merge(baseWebpackConfig, {
       name: 'app',
       async: 'vendor-async',
       children: true,
-      minChunks: 3
+      minChunks: (module, count) => { 
+				// 被 2 个及以上 chunk 使用的共用模块提取出来 
+				return count >= 2 
+			}
     }),
 
     // copy custom static assets

@@ -23,6 +23,7 @@ const createLintingRule = () => ({
 var originalConfig = {
   context: path.resolve(__dirname, '../'),
   entry: {
+		// vendor:['vue', 'vue-router', 'axios'],
     app: './src/main.js'
   },
   output: {
@@ -56,7 +57,7 @@ var originalConfig = {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
+          limit: 2048,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
       },
@@ -64,7 +65,7 @@ var originalConfig = {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
+          limit: 2048,
           name: utils.assetsPath('media/[name].[hash:7].[ext]')
         }
       },
@@ -72,7 +73,7 @@ var originalConfig = {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
+          limit: 2048,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       }
