@@ -23,7 +23,7 @@ const createLintingRule = () => ({
 var originalConfig = {
   context: path.resolve(__dirname, '../'),
   entry: {
-		// vendor:['vue', 'vue-router', 'axios'],
+		// library: ['vue', 'vue-router', 'axios'],
     app: './src/main.js'
   },
   output: {
