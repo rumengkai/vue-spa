@@ -14,6 +14,10 @@ export const constantRouterMap = [
 				path: '/tpl',
 				name: 'tpl',
 				component: _import('tpl/index')
+		}, {
+			path: '/404',
+			name: '404',
+			component: _import('404/index')
 		}
 ]
 
