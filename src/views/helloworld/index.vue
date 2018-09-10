@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+		<h2 v-title="'HELLO WORLD'"></h2>
     <h1>{{ 1528356514883 | parseTime }}</h1>
 		{{msg}}
     <h2>Essential Links</h2>

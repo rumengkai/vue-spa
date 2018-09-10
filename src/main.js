@@ -8,8 +8,15 @@ import store from './store/index'
 import './vux'
 import '@/utils/index'
 import '@/styles/index.scss'
-
 import * as filters from './filters' // global filter
+import { setMetaTitle } from '@/utils/setMetaTitle.js'
+
+// 设置页面title（解决微信中页面切换title不变的问题）
+Vue.directive('title', {
+  inserted: (el, binding) => {
+    setMetaTitle(binding.value)
+  }
+})
 
 // register global utility filters.
 Object.keys(filters).forEach(key => {

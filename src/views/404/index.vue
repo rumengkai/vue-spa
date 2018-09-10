@@ -1,5 +1,6 @@
 <template>
   <div>
+		<h2 v-title="'404'"></h2>
     <p>{{ message.detail }}</p>
   </div>
 </template>
